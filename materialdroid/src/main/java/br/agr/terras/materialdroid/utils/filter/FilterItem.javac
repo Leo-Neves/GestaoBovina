@@ -1,0 +1,367 @@
+package br.agr.terras.materialdroid.utils.filter;
+
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatImageView;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import br.agr.terras.materialdroid.R;
+
+/**
+ * Created by galata on 30.08.16.
+ */
+public class FilterItem extends FrameLayout implements Serializable {
+
+    private AppCompatImageView buttonCancel;
+    private TextView textView;
+    private View bottomStroke;
+    private View topStroke;
+    private RelativeLayout textBackground;
+    private AppCompatImageView viewRight;
+    private AppCompatImageView viewLeft;
+    private RelativeLayout root;
+
+    private Boolean isFilterSelected = false;
+    private Boolean isIncreased = false;
+    private Float startX = 0f;
+    private Float startY = 0f;
+    private int cancelIconTint = android.R.color.white;
+    @DrawableRes
+    private Integer cancelIcon = R.drawable.ic_cancel;
+    @ColorInt
+    private Integer color = null;
+    @ColorInt
+    private Integer checkedColor = null;
+    @ColorInt
+    private Integer strokeColor = null;
+    @ColorInt
+    private Integer checkedTextColor = null;
+    @ColorInt
+    private Integer textColor = null;
+    private Typeface typeface = null;
+
+    public void setTypeface(Typeface value) {
+        textView.setTypeface(typeface);
+        this.typeface = value;
+    }
+
+    public String getString() {
+        return textView.getText().toString();
+    }
+
+    public void setText(String value) {
+        mText = value;
+        textView.setText(value);
+    }
+
+    private Float circlePosition = 0f;
+
+    public float getCirclePosition() {
+        return (textBackground.getWidth() / 2 + 1);
+    }
+
+    private Integer collapsedSize = 0;
+
+    public int getCollapsedSize() {
+        return viewLeft.getWidth();
+    }
+
+    private Float cornerRadius = 100f;
+
+    public void setCornerRadius(Float value) {
+        cornerRadius = value;
+        updateBackground();
+    }
+
+    private int fullSize = 0;
+
+    public int getFullSize() {
+        return fullSize;
+    }
+
+    public FilterItemListener listener = null;
+
+    private String mText = null;
+    private int mStrokeWidth = ViewGroupExtensions.dpToPx(this, 1.25f);
+
+    public FilterItem(Context context) {
+        super(context);
+        init(context);
+    }
+
+    public FilterItem(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
+
+    public FilterItem(Context context, AttributeSet attrs, int defStyleRes) {
+        super(context, attrs, defStyleRes);
+        init(context);
+    }
+
+    private void init(Context context) {
+        LayoutInflater.from(context).inflate(R.layout.item_filter, this, true);
+        buttonCancel = (AppCompatImageView) findViewById(R.id.buttonCancel);
+        textView = (TextView) findViewById(R.id.textView);
+        bottomStroke = findViewById(R.id.bottomStroke);
+        topStroke = findViewById(R.id.topStroke);
+        textBackground = (RelativeLayout) findViewById(R.id.textBackground);
+        viewRight = (AppCompatImageView) findViewById(R.id.viewRight);
+        viewLeft = (AppCompatImageView) findViewById(R.id.viewLeft);
+        root = (RelativeLayout) findViewById(R.id.root);
+        viewLeft.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isIncreased) {
+                    if (isFilterSelected) {
+                        deselect();
+                    } else {
+                        select();
+                    }
+                } else {
+                    dismiss();
+                }
+            }
+        });
+        viewRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewLeft.performClick();
+            }
+        });
+        textBackground.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.performClick();
+            }
+        });
+        textView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isIncreased) {
+                    if (isFilterSelected) {
+                        deselect();
+                    } else {
+                        select();
+                    }
+                }
+            }
+        });
+
+        buttonCancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isIncreased) {
+                    dismiss();
+                } else {
+                    viewLeft.performClick();
+                }
+            }
+        });
+        buttonCancel.setSupportBackgroundTintList(ColorStateList.valueOf(this.getColor(this.cancelIconTint)));
+        isIncreased = true;
+    }
+
+    public Float getStartX() {
+        return startX;
+    }
+
+    public Float getStartY() {
+        return startY;
+    }
+
+    public void setStartY(Float startY) {
+        this.startY = startY;
+    }
+
+    public void setStartX(Float startX) {
+        this.startX = startX;
+    }
+
+    public void setCancelIconTint(int cancelIconTint) {
+        this.cancelIconTint = cancelIconTint;
+    }
+
+    public void setCancelIcon(Integer cancelIcon) {
+        this.cancelIcon = cancelIcon;
+    }
+
+    public void setColor(Integer color) {
+        this.color = color;
+    }
+
+    public void setCheckedColor(Integer checkedColor) {
+        this.checkedColor = checkedColor;
+    }
+
+    public void setStrokeColor(Integer strokeColor) {
+        this.strokeColor = strokeColor;
+    }
+
+    public void setCheckedTextColor(Integer checkedTextColor) {
+        this.checkedTextColor = checkedTextColor;
+    }
+
+    public void setTextColor(Integer textColor) {
+        this.textColor = textColor;
+    }
+
+    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        buttonCancel.setBackgroundResource(cancelIcon);
+        if (fullSize == 0) {
+            fullSize = getMeasuredWidth();
+        }
+    }
+
+    public void select(boolean notify) {
+        isIncreased = true;
+        isFilterSelected = true;
+        updateView();
+
+        if (notify && listener != null) {
+            listener.onItemSelected(this);
+        }
+    }
+
+    void select() {
+        select(true);
+    }
+
+    public void deselect() {
+        deselect(true);
+    }
+
+    public void deselect(boolean notify) {
+        isFilterSelected = false;
+        updateView();
+
+        if (notify && listener != null) {
+            listener.onItemDeselected(this);
+        }
+    }
+
+    public void dismiss() {
+        if (listener != null)
+            listener.onItemRemoved(this);
+    }
+
+    public void decrease(float ratio) {
+        textView.setScaleX(1 - 0.2f * ratio);
+        textView.setAlpha(1 - ratio);
+        buttonCancel.setAlpha(ratio);
+        textBackground.setScaleX(1 - ratio);
+        viewLeft.setTranslationY(circlePosition * ratio);
+        viewRight.setTranslationX(-circlePosition * ratio);
+
+        if (ratio == 0f) {
+            buttonCancel.setVisibility(View.VISIBLE);
+            buttonCancel.setAlpha(0f);
+        }
+
+        if (ratio == 1f) {
+            textView.setScaleX(0f);
+        }
+
+        isIncreased = false;
+    }
+
+    public void increase(float ratio) {
+        textView.setScaleX(1f);
+        textView.setAlpha(ratio);
+        buttonCancel.setAlpha(1 - getAlpha());
+        textBackground.setScaleX(ratio);
+        viewLeft.setTranslationX(circlePosition * (1 - ratio));
+        viewRight.setTranslationX(-circlePosition * (1 - ratio));
+
+        if (ratio == 1f) {
+            buttonCancel.setVisibility(View.GONE);
+            fullSize = getMeasuredWidth();
+        }
+
+        isIncreased = true;
+    }
+
+    private void updateView() {
+        updateTextColor();
+        updateBackground();
+    }
+
+    private void updateTextColor() {
+        Integer color = isFilterSelected ? checkedTextColor : textColor;
+        if (color != null) {
+            textView.setTextColor(color);
+        }
+    }
+
+    private void updateBackground() {
+        Integer color = this.isFilterSelected ? this.checkedColor : this.color;
+        color = removeAlpha(color);
+        Integer strokeColor = this.isFilterSelected ? color : this.removeAlpha(this.strokeColor);
+
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setCornerRadius(cornerRadius);
+
+        if (color != null) {
+            drawable.setColor(color);
+            textBackground.setBackgroundColor(color);
+        } else {
+            drawable.setColor(getColor(android.R.color.white));
+            textBackground.setBackgroundColor(getColor(android.R.color.white));
+        }
+
+        if (strokeColor != null) {
+            drawable.setStroke(mStrokeWidth, strokeColor);
+            topStroke.setBackgroundColor(strokeColor);
+            bottomStroke.setBackgroundColor(strokeColor);
+        }
+
+        viewLeft.setBackgroundDrawable(drawable);
+        viewRight.setBackgroundDrawable(drawable);
+
+    }
+
+    private Integer getColor(@ColorRes int color) {
+        return ContextCompat.getColor(getContext(), color);
+    }
+
+    private Integer removeAlpha(Integer color) {
+        return color != null ? color | 0xff000000 : null;
+    }
+
+    void removeFromParent() {
+        if (getParent() != null) {
+            ((ViewGroup) getParent()).removeView(this);
+        }
+    }
+
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return !(this.getParent() instanceof CollapsedFilterView) && super.onInterceptTouchEvent(ev);
+    }
+
+    public boolean equals(Object other) {
+        return this == other || other instanceof FilterItem && Objects.equals(mText, ((FilterItem) other).mText);
+    }
+
+    public int hashCode() {
+        return this.mText != null ? this.mText.hashCode() : 0;
+    }
+
+
+}

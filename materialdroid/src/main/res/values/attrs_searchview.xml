@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SearchView">
+        <attr name="sv_searchBarWidth" format="dimension"/>
+        <attr name="sv_searchBarMarginTop" format="dimension"/>
+        <attr name="sv_searchBarMarginLeft" format="dimension"/>
+        <attr name="sv_searchBarMarginRight" format="dimension"/>
+        <attr name="sv_searchSuggestionTextSize" format="dimension"/>
+        <attr name="sv_showMenuAction" format="boolean"/>
+        <attr name="sv_leftActionMode">
+            <enum name="showHamburger" value="1" />
+            <enum name="showSearch" value="2" />
+            <enum name="showHome" value="3" />
+            <enum name="noLeftAction" value="4" />
+        </attr>
+        <attr name="sv_showVoiceInput" format="boolean"/>
+        <attr name="sv_showSearchKey" format="boolean"/>
+        <attr name="sv_voiceRecHint" format="string"/>
+        <attr name="sv_searchHint" format="string"/>
+        <attr name="sv_dismissOnOutsideTouch" format="boolean"/>
+        <attr name="sv_showMoveSuggestionUp" format="boolean"/>
+        <attr name="sv_suggestionsListAnimDuration" format="integer"/>
+        <attr name="sv_hideOverflowMenuWhenFocused" format="boolean"/>
+        <attr name="sv_showOverFlowMenu" format="boolean"/>
+        <attr name="sv_close_search_on_keyboard_dismiss" format="boolean"/>
+        <attr name="sv_menu" format="reference"/>
+        <attr name="sv_leftActionColor" format="color"/>
+        <attr name="sv_menuItemIconColor" format="color"/>
+        <attr name="sv_actionMenuOverflowColor" format="color"/>
+        <attr name="sv_clearBtnColor" format="color"/>
+        <attr name="sv_backgroundColor" format="color"/>
+        <attr name="sv_dividerColor" format="color"/>
+        <attr name="sv_viewTextColor" format="color"/>
+        <attr name="sv_hintTextColor" format="color"/>
+        <attr name="sv_dimBackground" format="boolean"/>
+        <attr name="sv_suggestionRightIconColor" format="color"/>
+    </declare-styleable>
+
+    <color name="divider_color">#F0F0F0</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#33000000</color>
+    <color name="suggestion_item_regular_color">#FAFAFA</color>
+    <color name="suggestion_item_pressed_color">#bbbbbb</color>
+    <color name="suggestion_list_color">#FFFFFF</color>
+    <color name="search_input_background_color">#FFFFFF</color>
+    <color name="light_gray_inactive_icon">#BEBEBE</color>
+    <color name="gray_active_icon">#787878</color>
+    <color name="dark_gray">#787878</color>
+    <color name="light_gray">#e9e9e9</color>
+    <color name="pressed_color">#E7E7E7</color>
+    <color name="background">#FFFFFF</color>
+    <color name="divider">#F0F0F0</color>
+    <color name="menu_icon_color">#787878</color>
+    <color name="left_action_icon">#787878</color>
+    <color name="clear_btn_color">#787878</color>
+    <color name="overflow_icon_color">#787878</color>
+    <color name="hint_color">#808080</color>
+
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="search_bar_left_icon_left_margin">4dp</dimen>
+    <dimen name="search_bar_right_icon_right_margin">4dp</dimen>
+    <dimen name="search_bar_search_input_left_margin">20dp</dimen>
+    <dimen name="search_bar_search_input_right_margin">68dp</dimen>
+    <dimen name="search_bar_filter_section_marin_left">64dp</dimen>
+    <dimen name="search_bar_text_size">16dp</dimen>
+    <dimen name="text_content_margin">16dp</dimen>
+
+    <!-- Sizes for a square button with a system icon on it -->
+    <dimen name="square_button_icon_size">24dp</dimen>
+    <dimen name="square_button_size">48dp</dimen>
+    <dimen name="square_button_padding">12dp</dimen>
+
+    <dimen name="suggestion_body_text_size">18sp</dimen>
+</resources>

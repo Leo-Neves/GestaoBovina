@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Adicionar"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/menuAdicionar"
+        />
+
+    <item android:title="Sincronizar"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/menuSincronizar"
+        />
+    <item android:title="Ler QRCode"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/menuQrcode"
+        />
+    <item android:title="Dashboard"
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/menuDashboard"
+        />
+</menu>

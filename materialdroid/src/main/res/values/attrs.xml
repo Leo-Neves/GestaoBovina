@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GalleryView">
+        <attr name="gl_itemHeight" format="dimension" />
+        <attr name="gl_itemMargin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="Timeline" >
+        <attr name="tl_marker" format="color|reference"/>
+        <attr name="tl_markerColor" format="color"/>
+        <attr name="tl_line" format="color|reference"/>
+        <attr name="tl_markerSize" format="dimension"/>
+        <attr name="tl_lineSize" format="dimension"/>
+        <attr name="tl_lineOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="tl_markerInCenter" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="ProgressChart">
+        <attr name="transparentColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressValue" format="integer" />
+        <attr name="radius" format="integer" />
+        <attr name="completedColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedLetterView">
+        <attr name="titleText" format="string" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="backgroundColorValue" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialSwitch">
+        <attr name="rd_titulo" format="string" />
+        <attr name="rd_codigo" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialTitulo">
+        <attr name="tv_foto" format="boolean" />
+        <attr name="tv_titulo" format="string" />
+        <attr name="tv_criterios" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BottomBar">
+        <attr name="bb_tabLayoutId" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SnackBar">
+        <attr name="android:maxWidth" />
+        <attr name="sb_elevation" format="dimension"/>
+        <attr name="sb_maxActionInlineWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabLayout">
+        <attr name="tabIndicatorColor" format="color" />
+        <attr name="tabIndicatorHeight" format="dimension" />
+        <attr name="tabContentStart" format="dimension" />
+        <attr name="tabBackground" format="reference" />
+        <attr name="tabMode">
+            <enum name="scrollable" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <attr name="tabGravity">
+            <enum name="fill" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+        <attr name="tabMinWidth" format="dimension" />
+        <attr name="tabMaxWidth" format="dimension" />
+        <attr name="tabTextAppearance" format="reference" />
+        <attr name="tabSelectedTextColor" format="color" />
+        <attr name="tabPaddingStart" format="dimension" />
+        <attr name="tabPaddingTop" format="dimension" />
+        <attr name="tabPaddingEnd" format="dimension" />
+        <attr name="tabPaddingBottom" format="dimension" />
+        <attr name="tabPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabHostOld">
+
+        <attr name="th_hasIcons" format="boolean" />
+        <attr name="th_primaryColor" format="color" />
+        <attr name="th_accentColor" format="color" />
+        <attr name="th_iconColor" format="color" />
+        <attr name="th_textColor" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="WebTextView">
+        <attr name="wtv_text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CoordinatorLayout">
+        <attr name="keylines" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout_LayoutParams">
+        <attr name="android:layout_gravity" />
+        <attr name="layout_behavior" format="string" />
+        <attr name="layout_anchor" format="reference" />
+        <attr name="layout_keyline" format="integer" />
+        <attr name="layout_anchorGravityy">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_vertical" value="0x10" />
+            <flag name="fill_vertical" value="0x70" />
+            <flag name="center_horizontal" value="0x01" />
+            <flag name="fill_horizontal" value="0x07" />
+            <flag name="center" value="0x11" />
+            <flag name="fill" value="0x77" />
+            <flag name="clip_vertical" value="0x80" />
+            <flag name="clip_horizontal" value="0x08" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ColorOptionsView">
+        <attr name="agendaCurrentDayTextColor" format="color" />
+        <attr name="calendarHeaderColor" format="color" />
+        <attr name="calendarColor" format="color" />
+        <attr name="calendarDayTextColor" format="color" />
+        <attr name="calendarMonthTextColor" format="color" />
+        <attr name="calendarPastDayTextColor" format="color" />
+        <attr name="calendarCurrentDayTextColor" format="color" />
+        <attr name="fabColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="BreadcrumbView">
+        <attr name="path" format="string" />
+        <attr name="separator" format="string" />
+        <attr name="maxLevels" format="integer" />
+        <attr name="borderColor" format="reference|color" />
+        <attr name="unselectedColor" format="reference|color" />
+        <attr name="selectedColor" format="reference|color" />
+        <attr name="forwardByClick" format="boolean" />
+        <attr name="textUnselectedColor" format="reference|color" />
+        <attr name="textSelectedColor" format="reference|color" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="endType">
+            <flag name="Open" value="1" />
+            <flag name="Closed" value="0" />
+        </attr>
+        <attr name="startType">
+            <flag name="Open" value="1" />
+            <flag name="Closed" value="0" />
+        </attr>
+    </declare-styleable>
+</resources>

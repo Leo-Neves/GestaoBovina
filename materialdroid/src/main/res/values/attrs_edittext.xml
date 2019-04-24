@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditText">
+        <!-- The base color of backgorund. Default is transparent. -->
+        <attr name="et_backgroundColor" format="color"/>
+        <!-- The base color of the line and the texts. Default is black. -->
+        <attr name="et_baseColor" format="color" />
+        <!-- The highlight color of the line, and the floating label if the highlightFloatingLabel is true. -->
+        <attr name="et_primaryColor" format="color" />
+        <!-- How the floating label should be shown. Default is none -->
+        <attr name="et_floatingLabel">
+            <enum name="none" value="0" />
+            <enum name="normal" value="1" />
+            <enum name="highlight" value="2" />
+        </attr>
+        <!-- The color for when something is wrong.(e.g. exceeding max characters) -->
+        <attr name="et_errorColor" format="color" />
+        <!-- Min characters count limit. 0 means no limit. -->
+        <attr name="et_minCharacters" format="integer" />
+        <!-- max Characters count limit. 0 means no limit. -->
+        <attr name="et_maxCharacters" format="integer" />
+        <!-- Whether to show the bottom ellipsis in singleLine mode -->
+        <attr name="et_singleLineEllipsis" format="boolean" />
+        <!-- Reserved bottom text lines count, no matter if there is some helper/error text. -->
+        <attr name="et_minBottomTextLines" format="integer" />
+        <!-- Helper text at the bottom -->
+        <attr name="et_helperText" format="string" />
+        <!-- Helper text color -->
+        <attr name="et_helperTextColor" format="color" />
+        <!-- Font of the paint used to draw accent texts -->
+        <attr name="et_accentTypeface" format="string" />
+        <!-- Font used on view -->
+        <attr name="et_typeface" format="string" />
+        <!-- Custom float label text -->
+        <attr name="et_floatingLabelText" format="string" />
+        <!-- spacing between the main text and the floating label -->
+        <attr name="et_floatingLabelPadding" format="dimension" />
+        <!-- Hide underline -->
+        <attr name="et_hideUnderline" format="boolean" />
+        <!-- Underline's color -->
+        <attr name="et_underlineColor" format="color" />
+        <!-- Auto validate -->
+        <attr name="et_autoValidate" format="boolean" />
+        <!-- Left icon -->
+        <attr name="et_iconLeft" format="reference" />
+        <!-- Right icon -->
+        <attr name="et_iconRight" format="reference" />
+        <!-- Padding between icon(s) and the main area_ha. 8dp by default. -->
+        <attr name="et_iconPadding" format="dimension" />
+        <!-- Clear button -->
+        <attr name="et_clearButton" format="boolean" />
+        <!-- The floating label's text size. 12sp by default. -->
+        <attr name="et_floatingLabelTextSize" format="dimension" />
+        <!-- The floating label's text color. -1 by default. -->
+        <attr name="et_floatingLabelTextColor" format="color" />
+        <attr name="et_floatingLabelFraction" format="float" />
+        <!-- The bottom texts' size. 12sp by default. -->
+        <attr name="et_bottomTextSize" format="dimension" />
+        <!-- Always show the floating label, instead of animating it in/out. False by default. -->
+        <attr name="et_floatingLabelAlwaysShown" format="boolean" />
+        <!-- Always show the helper text, no matter if the edit text is focused. False by default. -->
+        <attr name="et_helperTextAlwaysShown" format="boolean" />
+        <!-- Whether use animation to show/hide the floating label. True by default. -->
+        <attr name="et_floatingLabelAnimating" format="boolean"/>
+        <!-- Text color -->
+        <attr name="et_textColor" format="color" />
+        <!-- Hint Text Color -->
+        <attr name="et_textColorHint" format="color" />
+        <!-- Auto validate on focus lost. False by default. -->
+        <attr name="et_validateOnFocusLost" format="boolean"/>
+        <!-- Whether check the characters count at the beginning it's shown. True by default. -->
+        <attr name="et_checkCharactersCountAtBeginning" format="boolean"/>
+        <!-- Default sufix in the text. -->
+        <attr name="et_sufix" format="string"/>
+        <!-- Seleciona o modo de máscara-->
+        <attr name="et_modo" format="enum">
+            <enum name="inteiro" value="0"/>
+            <enum name="decimal" value="1"/>
+            <enum name="data" value="2"/>
+            <enum name="telefone" value="3"/>
+            <enum name="cpf" value="4"/>
+            <enum name="texto" value="5"/>
+            <enum name="real" value="6"/>
+            <enum name="email" value="7"/>
+            <enum name="cnpj" value="8"/>
+            <enum name="cartao" value="9"/>
+            <enum name="cep" value="10"/>
+            <enum name="mes_ano" value="11"/>
+        </attr>
+
+        <attr name="et_caps" format="enum">
+            <enum name="todos" value="0"/>
+            <enum name="nenhum" value="1"/>
+            <enum name="sentencas" value="2"/>
+            <enum name="palavras" value="3"/>
+            <enum name="padrao" value="4"/>
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialTextField">
+        <attr name="mtf_cardCollapsedHeight" format="dimension"/>
+        <attr name="mtf_labelColor" format="color"/>
+        <attr name="mtf_image" format="reference"/>
+        <attr name="mtf_animationDuration" format="integer"/>
+        <attr name="mtf_openKeyboardOnFocus" format="boolean"/>
+    </declare-styleable>
+
+    <dimen name="default_padding_top">8dp</dimen>
+    <dimen name="default_padding_bottom">8dp</dimen>
+    <dimen name="inner_padding_left">0dp</dimen>
+    <dimen name="inner_padding_right">0dp</dimen>
+    <dimen name="floating_label_text_size">12sp</dimen>
+    <dimen name="bottom_text_size">12sp</dimen>
+    <dimen name="inner_components_spacing">8dp</dimen>
+    <dimen name="bottom_ellipsis_height">4dp</dimen>
+</resources>

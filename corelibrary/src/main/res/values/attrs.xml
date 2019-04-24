@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandableLayout">
+        <attr name="el_headerLayout" format="reference"/>
+        <attr name="el_contentLayout" format="reference" />
+        <attr name="el_duration" format="integer" />
+        <attr name="el_top" format="boolean" />
+        <attr name="el_headerDefaultBackground" format="reference"/>
+        <attr name="el_headerExpandableBackground" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedLetterView">
+        <attr name="titleText" format="string" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="backgroundColorValue" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressChart">
+        <attr name="transparentColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressValue" format="integer" />
+        <attr name="radius" format="integer" />
+        <attr name="completedColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="MapComponent">
+        <attr name="mc_type">
+            <enum name="google" value="0" />
+            <enum name="maply" value="1" />
+            <enum name="mapbox" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

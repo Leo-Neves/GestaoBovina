@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FoldingCell">
+        <attr name="fc_backSideColor" format="color" />
+        <attr name="fc_animationDuration" format="integer" />
+        <attr name="fc_additionalFlipsCount" format="integer" />
+    </declare-styleable>
+</resources>

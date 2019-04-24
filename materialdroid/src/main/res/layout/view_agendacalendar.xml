@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <br.agr.terras.materialdroid.childs.calendar.CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <br.agr.terras.materialdroid.childs.calendar.AgendaView
+        android:id="@+id/agenda_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </br.agr.terras.materialdroid.childs.calendar.AgendaView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true">
+
+        <br.agr.terras.materialdroid.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:fab_size="normal"
+
+            />
+
+        <ImageView
+            android:id="@+id/imageViewFloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/fab_arrow"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</merge>

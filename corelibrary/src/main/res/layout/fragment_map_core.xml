@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/containerFragmentMapa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <br.agr.terras.materialdroid.FloatingActionButton
+        android:id="@+id/fabAmpliar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/linearLayoutButtonsMapa"
+        android:padding="5dp"
+        android:layout_marginTop="65dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_aspect_ratio_white_24dp"
+        app:fab_colorNormal="@color/TerrasBlue"
+        app:fab_colorPressed="@color/TerrasBlueDark" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutButtonsMapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp"
+        android:orientation="vertical">
+
+        <br.agr.terras.materialdroid.FloatingActionButton
+            android:id="@+id/fabEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/ic_edit_white_24dp"
+            android:visibility="gone"
+            app:fab_colorNormal="@color/TerrasBlue"
+            app:fab_colorPressed="@color/TerrasBlueDark" />
+
+        <br.agr.terras.materialdroid.FloatingActionButton
+            android:id="@+id/fabDesfazer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_undo_white_24dp"
+            app:fab_colorNormal="@color/TerrasBlue"
+            app:fab_colorPressed="@color/TerrasBlueDark" />
+
+        <br.agr.terras.materialdroid.FloatingActionButton
+            android:id="@+id/fabTutorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_help_white_24dp"
+            app:fab_colorNormal="@color/TerrasBlue"
+            app:fab_colorPressed="@color/TerrasBlueDark" />
+    </LinearLayout>
+
+    <br.agr.terras.materialdroid.FloatingActionButton
+        android:id="@+id/fabGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/fabCamadas"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_gps"
+        app:fab_colorNormal="@color/TerrasBlue"
+        app:fab_colorPressed="@color/TerrasBlueDark" />
+
+    <br.agr.terras.materialdroid.FloatingActionButton
+        android:id="@+id/fabCamadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="20dp"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_layers_white_vetor"
+        app:fab_colorNormal="@color/TerrasBlue"
+        app:fab_colorPressed="@color/TerrasBlueDark" />
+
+    <br.agr.terras.materialdroid.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:sv_searchBarMarginLeft="4dp"
+        app:sv_searchBarMarginTop="4dp"
+        app:sv_searchBarMarginRight="4dp"
+        app:sv_searchHint="Pesquisar"
+        app:sv_suggestionsListAnimDuration="250"
+        app:sv_showSearchKey="false"
+        app:sv_leftActionMode="showSearch"
+        app:sv_close_search_on_keyboard_dismiss="true"/>
+
+    <include layout="@layout/content_mapa_camadas"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

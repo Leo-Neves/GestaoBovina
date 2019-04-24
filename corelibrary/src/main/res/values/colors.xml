@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pressed_color">#f0ff00</color>
+    <color name="default_color">#001eff</color>
+    <color name="blue_transparent">#884198d9</color>
+    <color name="light_blue_transparent">#887eb0d7</color>
+    <color name="green_transparent">#8800d100</color>
+    <color name="light_green_transparent">#8886d086</color>
+
+    <color name="marker_azul">#630f375d</color>
+    <color name="polygon_azul_transparente">#630f375d</color>
+    <color name="marker_azul_escuro">#ff0f375d</color>
+
+    <color name="blue_ecotrack">#4198d9</color>
+    <color name="green_terras">#8cc63f</color>
+    <color name="azul_ciano">#00FFFF</color>
+
+    <color name="black_100">#000000</color>
+    <color name="black_50">#77000000</color>
+    <color name="black_40">#66000000</color>
+    <color name="black_80">#BB000000</color>
+    <color name="black_33">#33000000</color>
+
+    <color name="cinza">#4e4e4e</color>
+    <color name="vermelho">#970003</color>
+    <color name="vermelho_escuro">#5c0002</color>
+    <color name="branco">#ffffff</color>
+    <color name="verde">#39b54a</color>
+    <color name="verde_claro">#90c998</color>
+    <color name="verde_musgo">#546f2c</color>
+    <color name="laranja">#cf6100</color>
+    <color name="amarelo">#e5bd3c</color>
+    <color name="amarelo_escuro">#a6a000</color>
+    <color name="roxo">#7200cf</color>
+    <color name="roseo">#df71db</color>
+    <color name="azul">#0a0e6c</color>
+    <color name="marrom_escuro">#332f2f</color>
+    <color name="lightGray">#f5f5f5</color>
+
+    <!-- Social -->
+    <color name="about_facebook_color">#3b5998</color>
+    <color name="about_twitter_color">#55acee</color>
+    <color name="about_instagram_color">#3f729b</color>
+    <color name="about_play_store_color">#45BBC2</color>
+    <color name="about_youtube_color">#cd201f</color>
+    <color name="about_github_color">#333333</color>
+    <color name="about_item_icon_color">#313131</color>
+    <color name="about_description_color">#595959</color>
+    <color name="about_separator_color">#e1e1e1</color>
+    <color name="about_item_text_color">#7c7c7c</color>
+    <color name="about_text_color">#595959</color>
+    <array name="color_detector">
+        <item>#b90000</item>
+        <item>#a1a102</item>
+        <item>#2d58b6</item>
+        <item>#49862c</item>
+        <item>#222222</item>
+        <item>#eeeeee</item>
+        <item>#00ffffff</item>
+    </array>
+</resources>

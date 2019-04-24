@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Gestão Bovina</string>
+    <string name="falha_conexao">Falha de conexão</string>
+</resources>
